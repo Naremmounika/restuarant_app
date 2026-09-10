@@ -1,11 +1,18 @@
+import {useContext} from 'react'
+import {CartContext} from '../../context/CartContext'
 import './index.css'
 
 const FoodItemCard = props => {
   const {restaurant, activeTab, dishCounts, onUpdateDishCount} = props
+  const {addCartItem} = useContext(CartContext)
 
   const filteredCategory = restaurant.tableMenuList.filter(
     eachCategory => eachCategory.menu_category === activeTab,
   )
+
+  const onClickAddToCart = dish => {
+    addCartItem(dish)
+  }
 
   return (
     <div className="restaurant-dish-categories">
@@ -64,6 +71,15 @@ const FoodItemCard = props => {
                               +
                             </button>
                           </div>
+
+                          {dishCounts[dish.dish_id] > 0 && (
+                            <button
+                              type="button"
+                              onClick={() => onClickAddToCart(dish)}
+                            >
+                              ADD TO CART
+                            </button>
+                          )}
 
                           {dish.addonCat && dish.addonCat.length > 0 && (
                             <p className="customization-text">

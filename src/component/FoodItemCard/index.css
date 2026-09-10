@@ -1,3 +1,15 @@
+.restaurant-dish-categories {
+  padding: 10px 35px 40px;
+  background-color: #f8f9fb;
+}
+
+.restaurant-dish-categories > div > h2 {
+  font-size: 24px;
+  color: #172033;
+  margin: 15px 0 18px;
+  font-weight: 700;
+}
+
 .restaurant-dish-categories ul {
   display: flex;
   flex-direction: column;
@@ -5,113 +17,322 @@
   margin: 0;
 }
 
+/* DISH CARD */
+
 .dish-category-list {
   list-style-type: none;
   width: 100%;
-  margin: 12px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 16px;
+  min-height: 190px;
+  margin: 10px 0;
+  padding: 22px 25px;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+.dish-category-list:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+}
+
+/* LEFT SIDE */
 
 .dish-details-container {
   display: flex;
   flex-direction: row;
-}
-.dish-category-description-container {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
 .dish-header {
   display: flex;
+  align-items: flex-start;
+  width: 100%;
 }
-.not-available-text {
-  color: red;
-}
+
+/* VEG / NON-VEG ICON */
+
 .dot-box-green,
 .dot-box-red {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+
   border: 2px solid;
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 3px;
-  margin-top: 23px;
-  margin-right: 5px;
+  margin-top: 5px;
+  margin-right: 12px;
 }
 
 .dot-box-green {
-  border-color: green;
+  border-color: #2e7d32;
 }
 
 .dot-box-red {
-  border-color: red;
+  border-color: #e53935;
 }
+
 .veg-dot,
 .nonveg-dot {
-  width: 12px;
-  height: 12px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   display: inline-block;
 }
 
 .veg-dot {
-  background: green;
+  background-color: #2e7d32;
 }
 
 .nonveg-dot {
-  background: red;
+  background-color: #e53935;
 }
+
+/* DISH NAME */
+
+.dish-header h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+  color: #172033;
+  font-weight: 700;
+}
+
+/* PRICE */
+
+.dish-header p {
+  margin: 5px 0;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dish-header h2 + p {
+  color: #172033;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* DESCRIPTION */
+
+.dish-header h2 ~ p:nth-of-type(2) {
+  max-width: 650px;
+  color: #7b8494;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* NOT AVAILABLE */
+
+.not-available-text {
+  color: #e53935 !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  margin-top: 10px !important;
+}
+
+/* QUANTITY */
 
 .addons-btn-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-top: 8px;
-  background-color: green;
-  width: 150px;
-  border-radius: 50px;
+
+  margin-top: 14px;
+
+  width: 125px;
+  height: 38px;
+
+  background-color: #2e7d32;
+  border-radius: 20px;
+  overflow: hidden;
 }
+
 .addons-btn-container button {
+  width: 38px;
+  height: 38px;
+
   background-color: transparent;
   border: none;
+
   cursor: pointer;
   color: #ffffff;
-  font-size: 35px;
-  font-weight: 600;
-  outline: none;
-  padding-left: 10px;
-  padding-right: 10px;
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+
+  padding: 0;
 }
+
+.addons-btn-container button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.addons-btn-container p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ADD TO CART */
+
+.addons-btn-container + button {
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 8px 16px;
+
+  background-color: #0b69ff;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addons-btn-container + button:hover {
+  background-color: #0754c7;
+}
+
+/* CUSTOMIZATION */
 
 .customization-text {
-  color: #007bff;
-  font-size: 14px;
+  color: #007bff !important;
+  font-size: 12px !important;
   font-weight: 500;
-}
-.addons-btn-container p {
-  color: #ffffff;
-  font-size: 20px;
-  font-family: 'Roboto';
+  margin-top: 8px !important;
 }
 
-@media (min-width: 768px) {
-  .restaurant-dish-categories ul {
-    flex-direction: column;
+/* CALORIES */
+
+.dish-calories {
+  align-self: center;
+  margin: 0 25px;
+
+  color: #e28a00;
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* FOOD IMAGE */
+
+.dish-category-list > img {
+  width: 125px;
+  height: 110px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  margin-left: 15px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* TABLET */
+
+@media screen and (max-width: 768px) {
+  .restaurant-dish-categories {
+    padding: 10px 18px 30px;
+  }
+
+  .restaurant-dish-categories > div > h2 {
+    font-size: 21px;
   }
 
   .dish-category-list {
-    margin: 20px 0;
-    max-width: 100%;
+    min-height: 175px;
+    padding: 18px;
+  }
+
+  .dish-header h2 {
+    font-size: 17px;
+  }
+
+  .dish-calories {
+    margin: 0 12px;
+    font-size: 12px;
+  }
+
+  .dish-category-list > img {
+    width: 100px;
+    height: 90px;
   }
 }
-.dish-calories {
-  align-self: center;
-  color: orange;
+
+/* MOBILE */
+
+@media screen and (max-width: 550px) {
+  .restaurant-dish-categories {
+    padding: 8px 12px 25px;
+  }
+
+  .restaurant-dish-categories > div > h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .dish-category-list {
+    min-height: 160px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .dish-details-container {
+    min-width: 0;
+  }
+
+  .dish-header h2 {
+    font-size: 16px;
+  }
+
+  .dish-header h2 ~ p:nth-of-type(2) {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .dish-calories {
+    display: none;
+  }
+
+  .dish-category-list > img {
+    width: 85px;
+    height: 80px;
+    margin-left: 10px;
+  }
+
+  .addons-btn-container {
+    width: 110px;
+    height: 34px;
+  }
+
+  .addons-btn-container button {
+    width: 34px;
+    height: 34px;
+    font-size: 21px;
+  }
 }
