@@ -1,0 +1,117 @@
+.restaurant-dish-categories ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.dish-category-list {
+  list-style-type: none;
+  width: 100%;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dish-details-container {
+  display: flex;
+  flex-direction: row;
+}
+.dish-category-description-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dish-header {
+  display: flex;
+}
+.not-available-text {
+  color: red;
+}
+.dot-box-green,
+.dot-box-red {
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin-top: 23px;
+  margin-right: 5px;
+}
+
+.dot-box-green {
+  border-color: green;
+}
+
+.dot-box-red {
+  border-color: red;
+}
+.veg-dot,
+.nonveg-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.veg-dot {
+  background: green;
+}
+
+.nonveg-dot {
+  background: red;
+}
+
+.addons-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  background-color: green;
+  width: 150px;
+  border-radius: 50px;
+}
+.addons-btn-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 600;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.customization-text {
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.addons-btn-container p {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+
+@media (min-width: 768px) {
+  .restaurant-dish-categories ul {
+    flex-direction: column;
+  }
+
+  .dish-category-list {
+    margin: 20px 0;
+    max-width: 100%;
+  }
+}
+.dish-calories {
+  align-self: center;
+  color: orange;
+}
